@@ -13,8 +13,8 @@ import java.util.Scanner;
  * Console driver for the Store Front application.
  *
  * This class starts the user-facing store menu and also starts the
- * AdministrationService in the background so an admin can send commands
- * over the local network while the user is still interacting with the store.
+ * AdministrationService in the background so a local admin client can send
+ * commands while the user is still interacting with the store.
  */
 public class StoreFrontApp {
 
@@ -24,7 +24,7 @@ public class StoreFrontApp {
     private static final String INVENTORY_FILE_PATH = "inventory.json";
 
     /**
-     * Local network port used by the administration service.
+     * Loopback port used by the administration service.
      */
     private static final int ADMIN_PORT = 5050;
 
@@ -63,7 +63,7 @@ public class StoreFrontApp {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
-        System.out.println("Welcome to the Store Front!");
+        System.out.println("Welcome to the Fantasy Storefront!");
 
         while (running) {
             printMenu();
