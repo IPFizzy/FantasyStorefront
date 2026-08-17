@@ -84,7 +84,7 @@ Requests and responses are serialized as JSON using Jackson.
 ## Architecture
 
 ```text
-CST-239/
+FantasyStorefront/
 ├── src/
 │   ├── app/
 │   │   ├── StoreFrontApp.java
@@ -150,8 +150,8 @@ mvn test
 Clone the repository:
 
 ```bash
-git clone https://github.com/IPFizzy/CST-239.git
-cd CST-239
+git clone https://github.com/IPFizzy/FantasyStorefront.git
+cd FantasyStorefront
 ```
 
 Compile and run the storefront:
@@ -176,10 +176,6 @@ The project uses Maven for external dependencies rather than committing third-pa
 ## Practice Project Context
 
 This application originated as a larger Java software-development exercise and is preserved as a completed portfolio project. It demonstrates object-oriented modeling, inheritance, collections, sorting, file persistence, JSON serialization, exception handling, testing, concurrency, and local socket communication in one cohesive application.
-
-## Recommended Repository Name
-
-For a public portfolio, **`FantasyStorefront`** is a stronger repository name than `CST-239` because it describes the finished application instead of the course in which the project originated.
 
 ## Author
 
