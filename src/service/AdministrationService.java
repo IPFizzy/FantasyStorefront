@@ -9,6 +9,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
@@ -16,8 +17,8 @@ import java.util.List;
 /**
  * Background administration service for the Store Front application.
  *
- * This service listens on a local network port and processes admin commands
- * without interrupting the normal user console flow.
+ * This service listens on the local loopback interface and processes admin
+ * commands without interrupting the normal user console flow.
  *
  * Supported commands:
  * U = update inventory using a JSON payload
@@ -82,7 +83,8 @@ public class AdministrationService implements Runnable {
      */
     @Override
     public void run() {
-        try (ServerSocket localServerSocket = new ServerSocket(port)) {
+        try (ServerSocket localServerSocket =
+                     new ServerSocket(port, 50, InetAddress.getLoopbackAddress())) {
             this.serverSocket = localServerSocket;
 
             while (running) {
